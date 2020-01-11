@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/recipes' do #creates a new recipe based on params from the form and saves the recipe to the database
-   @recipes = Article.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
+   @recipes = Article.create(params)
    redirect to "/recipes/#{@recipe.id}"
   end
 
