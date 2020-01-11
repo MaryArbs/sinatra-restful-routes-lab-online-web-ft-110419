@@ -9,6 +9,15 @@ class ApplicationController < Sinatra::Base
    erb :index
   end
 
+  get '/articles/new' do
+  erb :new
+  end
+ 
+  post '/articles' do
+   @article = Article.create(:title => params[:title], :content => params[:content])
+   redirect to "/articles/#{@article.id}"
+  end
+
   get '/recipes/:id' do  #show instance of recipe
    @recipe = Recipe.find_by_id(params[:id])
    erb :show
