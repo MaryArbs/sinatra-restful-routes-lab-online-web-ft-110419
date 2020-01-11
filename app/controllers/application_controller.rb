@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
    erb :index
   end
 
-  get '/recipes/new' do #load the form to create the new recipe 
+  get '/recipes/new' do #load the form to create the new recipe
   erb :new
   end
 
