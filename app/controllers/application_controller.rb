@@ -4,12 +4,12 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/recipes' do
+  get '/recipes' do #index
    @recipes = Recipe.all
    erb :index
   end
 
-  get '/recipes/:id' do  #show
+  get '/recipes/:id' do  #show instance of recipe 
    @recipe = Recipe.find_by_id(params[:id])
    erb :show
   end
