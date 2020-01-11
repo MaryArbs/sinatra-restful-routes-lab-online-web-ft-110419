@@ -20,4 +20,8 @@ class ApplicationController < Sinatra::Base
    redirect to '/articles'
   end
 
+  get '/articles/:id/edit' do  #load edit form
+    @article = Article.find_by_id(params[:id])
+    erb :edit
+  end
 end
