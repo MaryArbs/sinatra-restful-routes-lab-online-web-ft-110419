@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/recipes/new' do #load the form to create the new recipe
-   redirect to  "/recipes/"
+   erb :new
   end
 
   get '/recipes/:id' do  #show instance of recipe
