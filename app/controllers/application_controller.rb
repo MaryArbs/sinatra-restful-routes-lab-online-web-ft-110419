@@ -9,12 +9,12 @@ class ApplicationController < Sinatra::Base
    erb :index
   end
 
-  get '/articles/new' do
+  get '/recipes/new' do
   erb :new
   end
 
-  post '/articles' do
-   @article = Article.create(:title => params[:title], :content => params[:content])
+  post '/recipes' do
+   @recipes = Article.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
    redirect to "/articles/#{@article.id}"
   end
 
