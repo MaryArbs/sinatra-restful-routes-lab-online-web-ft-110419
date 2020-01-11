@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/recipes' do #index
+  get '/recipes' do #index allows access to all the recipes in the database via the instance variable @recipes 
    @recipes = Recipe.all
    erb :index
   end
