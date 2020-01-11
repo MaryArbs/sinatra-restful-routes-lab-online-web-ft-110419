@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
 
   post '/recipes' do
    @recipes = Article.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
-   redirect to "/articles/#{@article.id}"
+   redirect to "/recipes/#{@recipe.id}"
   end
 
   get '/recipes/:id' do  #show instance of recipe
